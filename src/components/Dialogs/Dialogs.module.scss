@@ -1,0 +1,33 @@
+.users,
+.messages{
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+  padding: 30px;
+}
+
+
+.user{
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: #273650;
+}
+.dialogs{
+  display: flex;
+  justify-content: space-between;
+}
+.message{
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+}
+.users{
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  padding: 30px;
+  background: #f1f1f1;
+}

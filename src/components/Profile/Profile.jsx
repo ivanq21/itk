@@ -5,11 +5,12 @@ import Posts from './Posts/Posts';
 
 const Profile = () => {
     const posts = [
-        {
+        {   id: 1,
             title: 'First',
             like: '1'
         },
-        {
+        {   
+            id: 2,
             title: 'Second',
             like: '2'
         }

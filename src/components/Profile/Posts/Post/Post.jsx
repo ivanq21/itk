@@ -1,19 +1,14 @@
 import React from 'react';
 import s from './Post.module.scss';
 
-const Post = ({posts}) => {
+const Post = ({title, like}) => {
     return(
         <div>
-        {posts.map((prop) => {
-            return (
-                <div className={s.post}>
+            <div className={s.post}>
                 <img width="40" src="https://img.icons8.com/plasticine/2x/user.png" alt=""/>
-                    <div className="text">{prop.title}</div>
-                    <span className={s.like}>Like: {prop.like}</span>
+                <div className="text">{title}</div>
+                <span className={s.like}>Like: {like}</span>
             </div>
-            )
-        })}
-       
         </div>
     )
 }
