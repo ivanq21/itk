@@ -4,44 +4,21 @@ import Users from './Users/Users';
 import Messages from './Messages/Messages';
 
 const Dialogs = (props) => {
-    const users = [
-        {
-            id: 1,
-            name: 'Вася'
-        },
-        {
-            id: 2,
-            name: 'Коля'
-        },
-        {
-            id: 3,
-            name: 'Витя'
-        }
-        
-    ];
-
-    const messages = [
-        {
-            id: 1,
-            text: 'Салют'
-        },
-        {
-            id: 2,
-            text: 'Как дела?'
-        },
-        {
-            id: 3,
-            text: 'че кого?'
-        }
-        
-    ]
-
+    let msg = React.createRef()
+    let sendMsg = () => {
+        let msgVal = msg.current.value;
+        alert(msgVal);
+    }
     return (
         <div className={s.dialogs}>
             <div className={s.users}>
-                <Users users={users}/>
+                <Users users={props.state.users}/>
             </div>
-            <Messages messages={messages}/>
+            <Messages messages={props.state.messages}/>
+            <div className={s.addMsgForm}>
+                <textarea ref={msg} name="" id="" cols="30" rows="10"></textarea>
+                <button onClick={sendMsg}>Send Msg</button>
+            </div>
         </div>
     )
 }

@@ -3,18 +3,7 @@ import Posts from './Posts/Posts';
 
 
 
-const Profile = () => {
-    const posts = [
-        {   id: 1,
-            title: 'First',
-            like: '1'
-        },
-        {   
-            id: 2,
-            title: 'Second',
-            like: '2'
-        }
-    ]
+const Profile = (props) => {
     return(
     <div className="profile">
         <div className="big-img">
@@ -28,7 +17,10 @@ const Profile = () => {
                 <p>City: Moskow</p>
             </div>
         </div>
-        <Posts posts={posts}/>
+        <Posts 
+            dispatch = {props.dispatch} 
+            posts={props.profilePage.posts}
+            newPostText={props.profilePage.newPostText}/>
     </div>
    )
 }

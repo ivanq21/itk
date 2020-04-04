@@ -6,20 +6,17 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/Profile/News/News'
 
-import {
-  BrowserRouter ,
-  Route
-} from "react-router-dom";
+import {Route} from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
       <div className="app-wrapper">
         <Header />
         <div className="container">
-          <Nav />
+          <Nav state={props.state.siteBar}/>
           <div className="content">
-            <Route path="/profile" component={Profile} />
-            <Route path="/dialogs" component={Dialogs} />
+            <Route path="/profile" render={() =><Profile dispatch={props.dispatch} profilePage={props.state.profilePage}/>} />
+            <Route path="/dialogs" render={() =><Dialogs state={props.state.dialogsPage}/>} />
             <Route path="/news" component={News} />
           </div>
         </div>

@@ -1,13 +1,29 @@
 import React from 'react';
 import s from './PostForm.module.scss';
 
-const PostForm = () => {
+const PostForm = (props) => {
+  
+    let newPostEl = React.createRef();
+    let addPost = () => {
+        // props.addPost();
+        props.dispatch({type: 'ADD-POST'})
+    }
+
+    let changeText = () => {
+        debugger;
+        let text = newPostEl.current.value;
+        // props.updateNewPostText(text);
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newTexts: text})
+    }
     return(
         <div>
-            <form action="" className={s.post_form}>
-                <textarea name="" id="" cols="20" rows="10"></textarea>
-                <button type="submit">Send</button>
-            </form>
+            <div className={s.post_form}>
+                <textarea
+                  onChange={ changeText }
+                  ref={newPostEl} 
+                  value={props.newPostText}/>
+                <button type="submit" onClick={ addPost }>Send</button>
+            </div>
         </div>
     )
     

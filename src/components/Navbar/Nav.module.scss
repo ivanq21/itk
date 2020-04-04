@@ -1,11 +1,15 @@
-.nav{
+.sitebar{
     display: flex;
     flex-direction: column;
     padding: 20px;
     background: #145e72;
     width: 25%;
     margin-right: 2%;
-  }
+    nav{
+      display: flex;
+    flex-direction: column;
+    }
+}
 .item{
     color: #fff;
     font-size: 20px;

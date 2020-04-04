@@ -1,15 +1,18 @@
 import React from 'react';
 import s from './Nav.module.scss'
 import { NavLink } from 'react-router-dom';
-const Nav = () => {
+import Friends from './Friends/Friends'
+
+const Nav = (props) => {
     return(
-    <nav className={s.nav}>
-        <NavLink exact className={s.item} activeClassName={s.active} to="/profile">Profile</NavLink>
-        <NavLink className={s.item} activeClassName={s.active} to="/dialogs">Messages</NavLink>
-        <NavLink className={s.item} activeClassName={s.active} to="/news">News</NavLink>
-        <NavLink className={s.item} activeClassName={s.active} to="/music">Music</NavLink>
-        <NavLink className={s.item} activeClassName={s.active} to="/settings">Settings</NavLink>
-    </nav>
+        <div className={s.sitebar}>
+            <nav >
+                {props.state.navbar.map((l, i) => {
+                return <NavLink key={i} exact className={s.item} activeClassName={s.active} to={`${l.link}`}>{l.title}</NavLink>
+                })}
+            </nav>
+            <Friends state={props.state.friends}/>
+        </div>
     )
  
 }
