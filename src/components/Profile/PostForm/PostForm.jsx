@@ -1,19 +1,17 @@
 import React from 'react';
 import s from './PostForm.module.scss';
+import { addPostAction, updatePostTextareaAction } from '../../../redux/state';
 
 const PostForm = (props) => {
   
     let newPostEl = React.createRef();
     let addPost = () => {
-        // props.addPost();
-        props.dispatch({type: 'ADD-POST'})
+        props.dispatch(addPostAction())
     }
 
     let changeText = () => {
-        debugger;
         let text = newPostEl.current.value;
-        // props.updateNewPostText(text);
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newTexts: text})
+        props.dispatch(updatePostTextareaAction(text))
     }
     return(
         <div>

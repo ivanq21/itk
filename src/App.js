@@ -15,8 +15,8 @@ function App(props) {
         <div className="container">
           <Nav state={props.state.siteBar}/>
           <div className="content">
-            <Route path="/profile" render={() =><Profile dispatch={props.dispatch} profilePage={props.state.profilePage}/>} />
-            <Route path="/dialogs" render={() =><Dialogs state={props.state.dialogsPage}/>} />
+            <Route path="/profile" render={() =><Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
+            <Route path="/dialogs" render={() =><Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}/>} />
             <Route path="/news" component={News} />
           </div>
         </div>

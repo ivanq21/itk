@@ -2,12 +2,18 @@ import React from 'react';
 import s from './Dialogs.module.scss';
 import Users from './Users/Users';
 import Messages from './Messages/Messages';
+import { addFriendMessageAction, updateFriendsMsgAction } from '../../redux/state';
 
 const Dialogs = (props) => {
+    console.log(props);
     let msg = React.createRef()
     let sendMsg = () => {
         let msgVal = msg.current.value;
-        alert(msgVal);
+        props.dispatch(addFriendMessageAction(msgVal));
+    }
+    let changeMsg = () => {
+        let newMsg = msg.current.value;
+        props.dispatch(updateFriendsMsgAction(newMsg))
     }
     return (
         <div className={s.dialogs}>
@@ -16,7 +22,7 @@ const Dialogs = (props) => {
             </div>
             <Messages messages={props.state.messages}/>
             <div className={s.addMsgForm}>
-                <textarea ref={msg} name="" id="" cols="30" rows="10"></textarea>
+                <textarea onChange={changeMsg} ref={msg} value={props.state.newMessage}></textarea>
                 <button onClick={sendMsg}>Send Msg</button>
             </div>
         </div>
