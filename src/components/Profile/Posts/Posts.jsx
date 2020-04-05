@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './Post/Post'
 import s from './Posts.module.scss'
-import PostForm from '../PostForm/PostForm';
+import PostForm from './PostForm/PostForm';
 
 const Posts = (props) => {
     return(

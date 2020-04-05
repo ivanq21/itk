@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './PostForm.module.scss';
-import { addPostAction, updatePostTextareaAction } from '../../../redux/state';
+import { addPostAction, updatePostTextareaAction } from '../../../../redux/profileReducer';
 
 const PostForm = (props) => {
   
     let newPostEl = React.createRef();
     let addPost = () => {
+        // props.dispatch(addPostAction)
         props.dispatch(addPostAction())
     }
 
@@ -27,4 +28,4 @@ const PostForm = (props) => {
     
 }
 
-export default PostForm
+export default PostForm;

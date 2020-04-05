@@ -2,18 +2,17 @@ import React from 'react';
 import s from './Dialogs.module.scss';
 import Users from './Users/Users';
 import Messages from './Messages/Messages';
-import { addFriendMessageAction, updateFriendsMsgAction } from '../../redux/state';
+import { updateFriendMsg, addFriendMsg } from '../../redux/dialogsReducer';
 
 const Dialogs = (props) => {
     console.log(props);
     let msg = React.createRef()
     let sendMsg = () => {
-        let msgVal = msg.current.value;
-        props.dispatch(addFriendMessageAction(msgVal));
+        props.dispatch(addFriendMsg())
     }
     let changeMsg = () => {
-        let newMsg = msg.current.value;
-        props.dispatch(updateFriendsMsgAction(newMsg))
+        let text = msg.current.value;
+        props.dispatch(updateFriendMsg(text))
     }
     return (
         <div className={s.dialogs}>

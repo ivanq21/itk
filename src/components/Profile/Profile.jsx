@@ -1,5 +1,6 @@
 import React from 'react';
 import Posts from './Posts/Posts';
+import PostContainer from './Posts/PostContainer';
 
 
 
@@ -17,10 +18,9 @@ const Profile = (props) => {
                 <p>City: Moskow</p>
             </div>
         </div>
-        <Posts 
-            dispatch = {props.dispatch} 
-            posts={props.profilePage.posts}
-            newPostText={props.profilePage.newPostText}/>
+        <Posts dispatch={props.dispatch} posts={props.profilePage.posts} newPostText={props.profilePage.newPostText} />
+        {/* <PostContainer store = {props.store}  /> */}
+
     </div>
    )
 }
