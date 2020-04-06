@@ -1,29 +1,26 @@
 import React from 'react';
 import Post from './Post/Post'
 import s from './Posts.module.scss'
-// import PostForm from './PostForm/PostForm';
-import { addPostAction, updatePostTextareaAction } from '../../../redux/profileReducer';
 
 const Posts = (props) => {
     let newPostEl = React.createRef();
-    let addPost = () => {
-        // props.dispatch(addPostAction)
-        props.dispatch(addPostAction())
+    let onAddPost = () => {
+        props.addPost();
     }
 
-    let changeText = () => {
+    let onChangeText = () => {
         let text = newPostEl.current.value;
-        props.dispatch(updatePostTextareaAction(text))
+        props.updatePostText(text)
     }
     return(
         <div className={s.my_posts}>
             <h2>My posts</h2>
            <div className={s.post_form}>
                 <textarea
-                  onChange={ changeText }
+                  onChange={ onChangeText }
                   ref={newPostEl} 
                   value={props.newPostText}/>
-                <button type="submit" onClick={ addPost }>Send</button>
+                <button type="submit" onClick={ onAddPost }>Send</button>
             </div>
             <div className={s.posts_list}>
                 {props.posts.map((post) => {

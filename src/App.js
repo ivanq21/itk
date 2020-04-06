@@ -7,16 +7,18 @@ import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/Profile/News/News'
 
 import {Route} from "react-router-dom";
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
+  console.log(props)
   return (
       <div className="app-wrapper">
         <Header />
         <div className="container">
           <Nav state={props.state.siteBar}/>
           <div className="content">
-            <Route path="/profile" render={() =><Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
-            <Route path="/dialogs" render={() =><Dialogs state={props.state.dialogsPage} dispatch={props.dispatch}/>} />
+            <Route path="/profile" render={() =><Profile store={props.store} />} />
+            <Route path="/dialogs" render={() =><DialogsContainer store={props.store} />} />
             <Route path="/news" component={News} />
           </div>
         </div>

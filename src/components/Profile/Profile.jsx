@@ -1,10 +1,8 @@
 import React from 'react';
-import Posts from './Posts/Posts';
 import PostContainer from './Posts/PostContainer';
 
-
-
 const Profile = (props) => {
+    console.log(props)
     return(
     <div className="profile">
         <div className="big-img">
@@ -18,8 +16,8 @@ const Profile = (props) => {
                 <p>City: Moskow</p>
             </div>
         </div>
-        <Posts dispatch={props.dispatch} posts={props.profilePage.posts} newPostText={props.profilePage.newPostText} />
-        {/* <PostContainer store = {props.store}  /> */}
+        {/* <Posts dispatch={props.dispatch} posts={props.profilePage.posts} newPostText={props.profilePage.newPostText} /> */}
+        <PostContainer store = {props.store} />
 
     </div>
    )
