@@ -5,7 +5,7 @@ import s from './Friends.module.scss';
 const Friends = (props) => {
   return(
     <div className={s.friends}>
-      {props.state.map((data, key) => <Friend state={data} key={key} />)}
+      {props.friends.map((data, key) => <Friend state={data} key={key} />)}
     </div>
   )
 }

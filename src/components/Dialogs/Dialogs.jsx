@@ -2,10 +2,8 @@ import React from 'react';
 import s from './Dialogs.module.scss';
 import Users from './Users/Users';
 import Messages from './Messages/Messages';
-import { updateFriendMsg, addFriendMsg } from '../../redux/dialogsReducer';
 
 const Dialogs = (props) => {
-    console.log(props)
     let msg = React.createRef();
     let state = props.dialogsPage;
     let sendMsg = () => {

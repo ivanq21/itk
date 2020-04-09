@@ -22,7 +22,7 @@ let store = {
       ]
     },
     dialogsPage: {
-      newMessage: 'Новое сообщение',
+      newMessage: '',
       users: [
         {
           id: 1,
