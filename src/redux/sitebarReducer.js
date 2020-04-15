@@ -17,6 +17,10 @@ let initialState = {
       title: 'Music'
     },
     {
+      link: '/users',
+      title: 'Users'
+    },
+    {
       link: '/settings',
       title: 'Settings'
     }

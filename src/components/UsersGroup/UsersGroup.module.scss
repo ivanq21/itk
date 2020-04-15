@@ -1,0 +1,57 @@
+.users{
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f1f1f1;
+}
+.left{
+  width: 13%;
+  margin-right: 2%;
+  img{
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.name{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.status{
+  font-size: 14px;
+  opacity: 0.8;
+}
+.city{
+  margin-top: auto;
+  margin-bottom: 0;
+}
+.follow{
+  width: 10%;
+  padding: 0 20px;
+  background: green;
+  color: #fff;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+}
+.pagination{
+  display: flex;
+  margin-bottom: 20px;
+  span{
+    width: 20px;
+    height: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+.active{
+  font-weight: bold;
+}

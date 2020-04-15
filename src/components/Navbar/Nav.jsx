@@ -8,7 +8,7 @@ const Nav = (props) => {
     return(
         <div className={s.sitebar}>
             <NavLinks navbar={props.siteBar.navbar} />
-            <Friends and build websitesnds friends={props.siteBar.friends} />
+            {/* <Friends and build websitesnds friends={props.siteBar.friends} /> */}
         </div>
     )
  
