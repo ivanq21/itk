@@ -1,16 +1,26 @@
 import React from 'react';
 import s from './PostForm.module.scss';
 
-const PostForm = () => {
+const PostForm = (props) => {
+   console.log(props)
+    let newPost = React.createRef();
+    let addPost = () => {
+        props.addPost();
+    }
+    let onPostChange = () => {
+        let text = newPost.current.value;
+        props.updateNewPostText(text);
+    }
+
     return(
         <div>
-            <form action="" className={s.post_form}>
-                <textarea name="" id="" cols="20" rows="10"></textarea>
-                <button type="submit">Send</button>
+            <form onSubmit={e => e.preventDefault()} className={s.post_form}>
+                <textarea onChange={ onPostChange } ref={newPost} value={props.newPostText} />
+                <button onClick={ addPost } type="submit">Send</button>
             </form>
         </div>
     )
     
 }
 
-export default PostForm
+export default PostForm;

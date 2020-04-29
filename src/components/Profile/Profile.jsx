@@ -1,33 +1,14 @@
 import React from 'react';
 import Posts from './Posts/Posts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 
 
-const Profile = () => {
-    const posts = [
-        {
-            title: 'First',
-            like: '1'
-        },
-        {
-            title: 'Second',
-            like: '2'
-        }
-    ]
+const Profile = (props) => {
     return(
     <div className="profile">
-        <div className="big-img">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRFh0PSl9KGkWW7_D3JG3hmRX97IPTpnTbirePSR_meUGeFgHPT" alt=""/>
-        </div> 
-        <div className="right">
-            <img src="https://img.icons8.com/plasticine/2x/user.png"  alt=""/>
-            <div className="info">
-                <div className="name">Ivan K.</div>
-                <p>Date of Birth: 26 july</p>
-                <p>City: Moskow</p>
-            </div>
-        </div>
-        <Posts posts={posts}/>
+        <ProfileInfo />
+        <Posts addPost={props.addPost} updateNewPostText={props.updateNewPostText} newPostText={props.profile.newPostText} posts={props.profile.posts}/>
     </div>
    )
 }

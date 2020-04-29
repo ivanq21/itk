@@ -8,7 +8,7 @@ const Posts = (props) => {
     return(
         <div className={s.my_posts}>
             <h2>My posts</h2>
-           <PostForm />
+           <PostForm newPostText={props.newPostText} updateNewPostText={props.updateNewPostText} addPost={props.addPost}/>
             <div className={s.posts_list}>
                 <Post posts={props.posts}/>
             </div>
