@@ -4,7 +4,6 @@ import s from './Posts.module.scss'
 import PostFormContainer from './PostForm/PostFormContainer';
 
 const Posts = (props) => {
-    debugger;
     return(
         <div className={s.my_posts}>
             <h2>My posts</h2>

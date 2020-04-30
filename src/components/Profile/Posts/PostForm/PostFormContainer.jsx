@@ -13,7 +13,7 @@ const PostFormContainer = (props) => {
     }
 
     return(
-        <PostForm addPost = {addPost} updateNewPostText = { onPostChange} />
+        <PostForm newPostText={props.newPostText} addPost = {addPost} updateNewPostText = { onPostChange} />
     )
     
 }

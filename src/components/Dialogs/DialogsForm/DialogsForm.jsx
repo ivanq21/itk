@@ -3,14 +3,14 @@ import {addMessageAC, onMessageChangeAC} from '../../../redux/dialogsReducer';
 import s from '../Dialogs.module.scss';
 
 const DialogsForm = (props) => {
-
+console.log(props);
   let newMsg = React.createRef();
   const addMsg = () => {
-    props.dispatch(addMessageAC());
+    props.addMsg();
   }
   const onMessageChange = () => {
     let text = newMsg.current.value;
-    props.dispatch(onMessageChangeAC(text));
+    props.messageChange(text);
   }
   
   return(
