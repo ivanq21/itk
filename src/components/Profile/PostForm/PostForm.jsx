@@ -1,15 +1,17 @@
 import React from 'react';
 import s from './PostForm.module.scss';
+import {addPostAC, onPostChangeAC} from '../../../redux/profileReducer';
+
 
 const PostForm = (props) => {
-   console.log(props)
+    console.log(props)
     let newPost = React.createRef();
     let addPost = () => {
-        props.addPost();
+        props.dispatch(addPostAC());
     }
     let onPostChange = () => {
-        let text = newPost.current.value;
-        props.updateNewPostText(text);
+        let newPostText = newPost.current.value;
+        props.dispatch(onPostChangeAC(newPostText));
     }
 
     return(
