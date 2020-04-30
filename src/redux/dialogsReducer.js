@@ -1,7 +1,28 @@
 const ADD_NEW_MESSAGE = 'ADD-NEW-MESSAGE'
 const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
 
- const dialogsReducer = (state, action) => {
+let initState = {
+  messages: [
+    {id: 1, text: 'How are you'},
+    {id: 2, text: 'What the fuck, man?'},
+    {id: 3, text: 'Hay'},
+    {id: 4, text: 'Hello'},
+    {id: 5, text: 'Yo'},
+    {id: 6, text: 'Yolla'},
+  ],
+  users: [
+    {id: 1, name: 'Ivan'},
+    {id: 2, name: 'Petr'},
+    {id: 3, name: 'Vasa'},
+    {id: 4, name: 'Dajs'},
+    {id: 5, name: 'Dan'},
+    {id: 6, name: 'Pen'}
+  ],
+  newMessage: 'ddd'
+
+};
+
+ const dialogsReducer = (state = initState, action) => {
   switch(action.type){
     case ADD_NEW_MESSAGE:
       let newMessage = {id: state.messages.length+1, text: state.newMessage};
